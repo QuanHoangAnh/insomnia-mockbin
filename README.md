@@ -6,7 +6,7 @@ Insomnia Mockbin is maintained by [Kong](https://github.com/Kong), who also main
 
 ## Table of contents
 
-- [Insomnia Mockbin  ](#insomnia-mockbin--)
+- [Insomnia Mockbin](#insomnia-mockbin--)
   - [Table of contents](#table-of-contents)
   - [Features](#features)
   - [Installation](#installation)
@@ -27,7 +27,7 @@ Insomnia Mockbin is maintained by [Kong](https://github.com/Kong), who also main
 
 - uses HAR format
 - supports JSON, YAML, XML, HTML output
-- plays nice with proxies (uses the X-Forwarded-* headers for IP resolution)
+- plays nice with proxies (uses the `X-Forwarded-*` headers for IP resolution)
 - allows for HTTP Method Override using the header `X-HTTP-Method-Override` or through query string parameter: `_method`
 - create custom bins for experimenting log collection
 
@@ -198,6 +198,5 @@ Editor preferences are available in the [editor config](.editorconfig) for easy 
 [Enterprise](LICENSE) &copy; [Kong](https://www.konghq.com)
 
 [license-url]: https://github.com/Kong/mockbin/blob/master/LICENSE
-
 [npm-license]: https://img.shields.io/npm/l/mockbin.svg?style=flat-square
 [npm-version]: https://img.shields.io/npm/v/mockbin.svg?style=flat-square

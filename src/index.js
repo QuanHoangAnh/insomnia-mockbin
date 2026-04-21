@@ -6,6 +6,7 @@ const methodOverride = require("method-override");
 const morgan = require("morgan");
 const path = require("node:path");
 const router = require("../lib");
+const { errorHandler } = require("../lib/middleware");
 
 module.exports = (options, done) => {
 	if (!options) {
@@ -31,7 +32,7 @@ module.exports = (options, done) => {
 	app.use("/static", express.static(path.join(__dirname, "static")));
 
 	app.use(
-		morgan("dev", {
+		morgan(":method :url :status :response-time ms - :res[content-length]", {
 			skip: (req, res) =>
 				req.baseUrl === "/healthcheck" ||
 				(options.quiet === "true" && res.statusCode < 400),
@@ -43,6 +44,8 @@ module.exports = (options, done) => {
 	app.use("/healthcheck", (req, res) => {
 		res.status(200).send();
 	});
+
+	app.use(errorHandler);
 
 	app.listen(options.port);
 
